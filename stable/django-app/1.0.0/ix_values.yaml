@@ -1,0 +1,43 @@
+image:
+  pullPolicy: IfNotPresent
+  tag: latest
+
+securityContext:
+  runAsNonRoot: false
+  readOnlyRootFilesystem: false
+
+podSecurityContext:
+  runAsUser: 0
+  runAsGroup: 0
+
+env:
+  POSTGRES_USERNAME: "{{ .Values.postgresql.postgresqlUsername }}"
+  POSTGRES_PORT: "5432"
+  POSTGRES_DB_NAME: "{{ .Values.postgresql.postgresqlDatabase }}"
+  POSTGRES_PASSWORD:
+    secretKeyRef:
+      name: dbcreds
+      key: postgresql-password
+  POSTGRES_HOSTNAME:
+    secretKeyRef:
+      name: dbcreds
+      key: plainhost
+
+  PUBLIC_DOMAIN:
+  HTTP_PROTOCOL: https
+  SENTRY_DSN:
+  DJANGO_DEBUG: false
+  DJANGO_SECRET_KEY:
+
+postgresql:
+  enabled: true
+  existingSecret: "dbcreds"
+  postgresqlUsername: django
+  postgresqlDatabase: django
+
+service:
+  main:
+    ports:
+      main:
+        port: 8000
+        targetPort: 8000

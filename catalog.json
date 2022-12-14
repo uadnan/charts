@@ -1,0 +1,8 @@
+{
+  "stable": {
+    "django-app": {
+      "name": "django-app",
+      "app_readme": "Django App"
+    }
+  }
+}
