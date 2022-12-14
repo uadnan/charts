@@ -84,6 +84,24 @@ questions:
             type: string
             default: ""
             required: true
+        - variable: EMAIL_HOST
+          label: "Email Server Host"
+          schema:
+            type: string
+            default: ""
+            required: false
+        - variable: EMAIL_HOST_USER
+          label: "Email Server Username"
+          schema:
+            type: string
+            default: ""
+            required: false
+        - variable: EMAIL_HOST_PASSWORD
+          label: "Email Server Password"
+          schema:
+            type: string
+            default: ""
+            required: false
   - variable: ingress
     label: ""
     group: Ingress
