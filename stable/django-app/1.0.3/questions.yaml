@@ -85,20 +85,14 @@ questions:
             default: ""
             required: true
             private: true
-        - variable: EMAIL_HOST
-          label: "Email Server Host"
+        - variable: DEFAULT_FROM_EMAIL
+          label: "Default Email Sender"
           schema:
             type: string
             default: ""
             required: false
-        - variable: EMAIL_HOST_USER
-          label: "Email Server Username"
-          schema:
-            type: string
-            default: ""
-            required: false
-        - variable: EMAIL_HOST_PASSWORD
-          label: "Email Server Password"
+        - variable: SENDGRID_API_KEY
+          label: "Sendgrid API Key"
           schema:
             type: string
             default: ""

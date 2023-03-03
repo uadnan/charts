@@ -27,9 +27,8 @@ env:
   DJANGO_DEBUG: false
   DJANGO_SECRET_KEY:
 
-  EMAIL_HOST:
-  EMAIL_HOST_USER:
-  EMAIL_HOST_PASSWORD:
+  SENDGRID_API_KEY:
+  DEFAULT_FROM_EMAIL:
 
 postgresql:
   enabled: true
